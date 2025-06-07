@@ -1,0 +1,25 @@
+,precision,recall,f1-score,support
+brownfield,0,0,0,40
+cemetery,0,0,0,15
+commercial,0,0,0,2
+construction,0,0,0,0
+flowerbed,0,0,0,0
+forest,0,0,0,7
+grass,0.5,0.01,0.03,138
+greenhouse_horticulture,0,0,0,0
+industrial,0.32,0.34,0.33,73
+landfill,0,0,0,2
+meadow,0,0,0,6
+military,0,0,0,0
+public_works,0,0,0,3
+quarry,0,0,0,0
+railway,0,0,0,14
+recreation_ground,0,0,0,7
+religious,0,0,0,4
+residential,0.49,0.96,0.65,313
+retail,0,0,0,77
+unknown,0.95,0.99,0.97,142
+,,,,
+accuracy,,,0.56,843
+macro avg,0.11,0.12,0.1,843
+weighted avg,0.45,0.56,0.44,843
