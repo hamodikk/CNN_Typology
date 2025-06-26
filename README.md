@@ -60,4 +60,4 @@ Confusion matrix shows strong performance for common classes like residential an
 
 ![Amenity ROC Curves](roc_curves_amenities.png)
 
-The model performs best on well-represented classes and easily detectable features. Label imbalance and semantic ambiguity in OSM data present challenges, which are discussed in the thesis.
+The model performs best on well-represented classes and easily detectable features. Label imbalance and semantic ambiguity in OSM data present challenges, which are discussed in the thesis [here](Hamdi_Kucukengin_CNN_Topography.pdf).
