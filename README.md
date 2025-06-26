@@ -74,7 +74,7 @@ Confusion matrix shows strong performance for common classes like residential an
 - **Training**: Conducted on CPU; 10 epochs took ~45 minutes.
 - **Challenges**: Label imbalance and low-resolution imagery made rare class detection difficult.
 
-The model performs best on well-represented classes and easily detectable features. Label imbalance and semantic ambiguity in OSM data present challenges, which are discussed in the thesis [here](Hamdi_Kucukengin_CNN_Topography.pdf).
+The model performs best on well-represented classes and easily detectable features. Label imbalance and semantic ambiguity in OSM data present challenges, which are discussed in the thesis [here](Hamdi_Kucukengin_CNN_Typology.pdf).
 
 ## Limitation and Future Work
 
