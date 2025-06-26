@@ -7,8 +7,10 @@ This project investigates how deep convolutional neural networks (CNNs) can be u
 - [Data Sources](#data-sources)
 - [Specification](#specification)
 - [Programming](#programming)
+- [Methods](#methods)
 - [Results](#results)
 - [Discussion and Visuals](#discussion-and-visuals)
+- [Limitations and Future Work](#limitation-and-future-work)
 
 ## Introduction
 
@@ -41,6 +43,15 @@ The code is written in Python using:
 
 All processes, including dataset generation, preprocessing, CNN setup, training and evaluation is within this [jupyter notebook](dataset_generation_and_CNN.ipynb)
 
+## Methods
+
+The project follows a multi-stage pipeline:
+
+1. **Tile Generation**: Sentinel-2 RGB imagery from Google Earth Engine is clipped into 512x512m tiles over Chicago, saved locally at 10m resolution.
+2. **Automated Labeling**: Using `osmnx`, land use and amenity labels are assigned to each tile based on spatial intersection with OpenStreetMap vector data.
+3. **Dataset Preprocessing**: Images are normalized and center-cropped to 48×48 pixels, and paired with typology and multi-label amenity tags.
+4. **Model Training**: A custom CNN is trained jointly on typology (single-label) and amenity (multi-label) outputs, using cross-entropy and binary cross-entropy losses.
+
 ## Results
 
 - **Typology accuracy**: ~56% on validation set
@@ -60,4 +71,16 @@ Confusion matrix shows strong performance for common classes like residential an
 
 ![Amenity ROC Curves](roc_curves_amenities.png)
 
+- **Training**: Conducted on CPU; 10 epochs took ~45 minutes.
+- **Challenges**: Label imbalance and low-resolution imagery made rare class detection difficult.
+
 The model performs best on well-represented classes and easily detectable features. Label imbalance and semantic ambiguity in OSM data present challenges, which are discussed in the thesis [here](Hamdi_Kucukengin_CNN_Topography.pdf).
+
+## Limitation and Future Work
+
+- **Label Imbalance**: Rare land-use classes like quarry or railway were underrepresented, leading to low F1 scores.
+- **Model Simplicity**: The architecture was intentionally lightweight, limiting its ability to capture finer details.
+- **Next Steps**:
+  - Experiment with deeper CNNs or pretrained models
+  - Apply to other cities
+  - Use self-supervised learning for feature extraction
