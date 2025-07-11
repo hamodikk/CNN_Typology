@@ -31,7 +31,7 @@ Each 512x512m tile was extracted as a GeoTIFF image and intersected with OSM fea
   - Softmax for typology classification
   - Sigmoid for multi-label amenity detection
 
-![CNN Diagram](CNN_typography_flow_diagram.png)
+![CNN Diagram](diagrams/CNN_typography_flow_diagram.png)
 
 ## Programming
 
@@ -41,7 +41,7 @@ The code is written in Python using:
 - `torch` and `torchvision` for model development
 - `sklearn`, `matplotlib`, and `seaborn` for evaluation and visualization
 
-All processes, including dataset generation, preprocessing, CNN setup, training and evaluation is within this [jupyter notebook](dataset_generation_and_CNN.ipynb)
+All processes, including dataset generation, preprocessing, CNN setup, training and evaluation is within this [jupyter notebook](notebooks/dataset_generation_and_CNN.ipynb)
 
 ## Methods
 
@@ -61,15 +61,15 @@ The project follows a multi-stage pipeline:
   - School: 0.71
   - Museum: 0.69
 
-![Confusion Matrix](confusion_matrix_typology.png)
+![Confusion Matrix](outputs/confusion_matrix_typology.png)
 
 Confusion matrix shows strong performance for common classes like residential and industrial, with lower recall on rare typologies.
 
 ## Discussion and Visuals
 
-![CNN Architecture](CNN_architecture.png)
+![CNN Architecture](diagrams/CNN_architecture.png)
 
-![Amenity ROC Curves](roc_curves_amenities.png)
+![Amenity ROC Curves](outputs/roc_curves_amenities.png)
 
 - **Training**: Conducted on CPU; 10 epochs took ~45 minutes.
 - **Challenges**: Label imbalance and low-resolution imagery made rare class detection difficult.
